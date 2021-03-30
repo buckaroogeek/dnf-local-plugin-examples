@@ -37,7 +37,7 @@ Ssh into the virtual machine `$vagrant ssh`, and install the dnf local plugin.
 #sudo clean all
 #sudo systemctl daemon reload
 ```
-Run dnf update. The virtual machine will automatically use any rpms in the local repository before retrieving the remaining rpms from a Fedora mirror.
+Run `#sudo dnf update`. The virtual machine will automatically use any rpms in the local repository before retrieving the remaining rpms from a Fedora mirror. The number of rpms pulled from the local repository will depend on how long the dnf local plugin has been in use on the host.
 
 ## Ansible Usage
 
@@ -48,8 +48,7 @@ For more information on using Ansible I recommend the Ansible for DevOps book by
 Start with the same Vagrantfile and uncomment the ansible provisioning section at the end of the file. (Re)Start Vagrant, i.e.
 
 ```
-vagrant halt
-vagrant up
+vagrant provision
 ```
 
-The ansible playbook (./ansible/playbook.yaml) will run, installing the dnf local plugin and then executing a `#dnf update` which will pull most rpms from the local repository shared on /srv/repodir by Vagrant.
+The ansible playbook (./ansible/playbook.yaml) will run, installing the dnf local plugin and then executing a `#dnf update` which will pull most rpms from the local repository shared on `/srv/repodir` by Vagrant. Note that the location of the local repository in the playbook must match the location specified in the Vagrantfile as a shared folder. The number of rpms retrieved from the local repository will depend on how long the repository has been in use on the host.
