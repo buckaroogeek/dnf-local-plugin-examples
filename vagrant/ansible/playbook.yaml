@@ -4,7 +4,7 @@
 
   # include the dnf plug in role to configure
   roles:
-    - fedora_dnf_local_plugin:
+    - role: fedora_dnf_local_plugin
       vars:
         dlp_repodir: '/srv/repodir'
 

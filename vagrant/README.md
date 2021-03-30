@@ -52,3 +52,4 @@ vagrant halt
 vagrant up
 ```
 
+The ansible playbook (./ansible/playbook.yaml) will run, installing the dnf local plugin and then executing a `#dnf update` which will pull most rpms from the local repository shared on /srv/repodir by Vagrant.
