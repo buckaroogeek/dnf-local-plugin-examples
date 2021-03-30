@@ -10,6 +10,11 @@
 
   # initial task - dnf update
   tasks:
+    - name: Refresh metadata from local repo
+      shell: 'dnf makecache --repo=_dnf_local'
+      args:
+        warn: false
+
     - name: DNF Update
       dnf:
         name: "*"

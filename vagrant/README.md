@@ -3,7 +3,7 @@ Virtual Machine Example Using Vagrant
 
 ## Description
 
-This directory contains a basic Vagrantfile that starts a Fedora Cloud Image vm including the shared folder containing the host's local DNF repository.
+This directory contains a basic Vagrantfile that starts a Fedora Cloud Image vm including the shared folder containing the host's local DNF repository. The ansible provisioner is commented out. The ansible provisioner will add the plugin automatically via a role.
 
 ## Update Notes
 Date        | Notes
