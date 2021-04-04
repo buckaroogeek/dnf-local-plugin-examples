@@ -18,7 +18,9 @@ Vagrant.configure("2") do |config|
 
   # ansible provisioner - commented out by default
   # the ansible role is installed into a path defined by
-  # ansible.cfg
+  # ansible.galaxy_roles-path below. The extra_vars are ansible
+  # variables passed to the playbook.
+  #
 #  config.vm.provision "ansible" do |ansible|
 #    ansible.verbose = "v"
 #    ansible.playbook = "ansible/playbook.yaml"
