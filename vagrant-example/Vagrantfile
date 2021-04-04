@@ -1,17 +1,20 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# define repo directory; same name on host and vm
+REPO_DIR = "/srv/repodir"
+
 Vagrant.configure("2") do |config|
 
   config.vm.box = "fedora/33-cloud-base"
 
   config.vm.provider :libvirt do |v|
-    v.memory = 4096
+    v.memory = 2048
   #  v.cpus = 2
   end
 
   # share the local repository with the vm at the same location
-  config.vm.synced_folder "/srv/repodir", "/srv/repodir"
+  config.vm.synced_folder REPO_DIR, REPO_DIR
 
   # ansible provisioner - commented out by default
   # the ansible role is installed into a path defined by
@@ -19,6 +22,9 @@ Vagrant.configure("2") do |config|
 #  config.vm.provision "ansible" do |ansible|
 #    ansible.verbose = "v"
 #    ansible.playbook = "ansible/playbook.yaml"
+#    ansible.extra.vars = {
+#      repo_dir = REPO_DIR
+#    }
 #    ansible.galaxy_role_file = "ansible/requirements.yaml"
 #    ansible.galaxy_roles_path = "ansible/roles"
 #  end
