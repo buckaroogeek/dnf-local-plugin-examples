@@ -1,0 +1,7 @@
+---
+
+# ansible fedora dnf plugin role
+- src: https://github.com/buckaroogeek/ansible-role-fedora-dnf-local-plugin
+  name: fedora_dnf_local_plugin
+
+...

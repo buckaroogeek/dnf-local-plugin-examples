@@ -2,16 +2,22 @@
 - hosts: all
   become: true
 
+  # repodir is defined in the Vagrantfile
+
   # include the dnf plug in role to configure
   roles:
     - role: fedora_dnf_local_plugin
       vars:
-        dlp_repodir: '/srv/repodir'
+        dlp_repodir: "{{ repo_dir }}"
 
   # initial task - dnf update
   tasks:
+    - name: Echo repo_dir
+      debug:
+        msg: The dnf local repository is at {{ repo_dir }}
+
     - name: Refresh metadata from local repo
-      shell: 'dnf makecache --repo=_dnf_local'
+      shell: "dnf makecache --repo=_dnf_local"
       args:
         warn: false
 
@@ -19,4 +25,5 @@
       dnf:
         name: "*"
         state: latest
+      when: dnf_update
 ...
