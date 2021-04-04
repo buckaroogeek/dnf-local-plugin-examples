@@ -3,11 +3,12 @@ Virtual Machine Example Using Vagrant
 
 ## Description
 
-This directory contains a basic Vagrantfile that starts a Fedora Cloud Image vm including the shared folder containing the host's local DNF repository. The ansible provisioner is commented out. The ansible provisioner will add the plugin automatically via a role.
+This directory contains a basic Vagrantfile that starts a Fedora Cloud Image vm including the shared folder containing the host's local DNF repository. The ansible provisioner is commented out. The ansible provisioner will add the plugin automatically via a role. The role is downloaded from a github repository automatically by the vagrant ansible integration.
 
 ## Update Notes
 Date        | Notes
 ----------  | -------------------------------
+4 April 2021 | Updated to ansible description
 27 Mar 2021  | Original implementation
 
 ## Installation
@@ -51,4 +52,4 @@ Start with the same Vagrantfile and uncomment the ansible provisioning section a
 vagrant provision
 ```
 
-The ansible playbook (./ansible/playbook.yaml) will run, installing the dnf local plugin and then executing a `#dnf update` which will pull most rpms from the local repository shared on `/srv/repodir` by Vagrant. Note that the location of the local repository in the playbook must match the location specified in the Vagrantfile as a shared folder. The number of rpms retrieved from the local repository will depend on how long the repository has been in use on the host.
+The ansible playbook (./ansible/playbook.yaml) will run, installing the dnf local plugin and then executing a `#dnf update` if the dnf_update flag in the Vagranfile is set to `true`. The `dnf update` will pull most rpms from the local repository shared on `/srv/repodir` by Vagrant. Note that the location of the local repository in the playbook must match the location specified in the Vagrantfile as a shared folder. The number of rpms retrieved from the local repository will depend on how long the repository has been in use on the host.
