@@ -1,3 +1,4 @@
 repodir
 .vagrant
 roles
+*.swp
