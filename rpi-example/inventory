@@ -1,0 +1,10 @@
+[pik8s]
+pi00 ansible_host=192.168.110.150
+pi01 ansible_host=192.168.110.151
+pi02 ansible_host=192.168.110.152
+pi03 ansible_host=192.168.110.153
+
+[pik8s:vars]
+ansible_ssh_user=pi
+ansible_ssh_private_key_file=~/.ssh/id_ed25519
+dnf_repo=/srv/repodir
