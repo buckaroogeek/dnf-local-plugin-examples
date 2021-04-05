@@ -35,3 +35,7 @@ ansible-playbook -i inventory configure.yaml
 Ansible will display basic information for each task as it is executed on each host.
 
 Execute the `update.yaml` playbook to run dnf update serially across all hosts. Ansible will follow the order set in the inventory file. The serial strategy is used to allow the first host to download any rpms as needed, then the subsequent hosts will refresh their dnf local repository metadata which will include all new rpms downloads by the first host.
+
+```
+ansible-playbook -i inventory update.yaml
+```
