@@ -1,6 +1,6 @@
 ---
 - name: DNF Update Play
-  hosts: pi02
+  hosts: all
   become: true
   serial: 1
 
