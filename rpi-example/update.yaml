@@ -1,0 +1,25 @@
+---
+- name: DNF Update Play
+  hosts: pi02
+  become: true
+  serial: 1
+
+  # dnf_repo is defined in the inventory file
+
+  # update system using dnf
+  tasks:
+    - name: Echo the repository directory name
+      debug:
+        msg: The dnf local repository is at {{ dnf_repo }}
+
+    - name: Refresh metadata from local repo
+      shell: "dnf makecache --repo=_dnf_local"
+      args:
+        warn: false
+
+    - name: DNF Update
+      dnf:
+        name: "*"
+        state: latest
+
+...

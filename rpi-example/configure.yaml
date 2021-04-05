@@ -1,0 +1,26 @@
+---
+# configure.yaml
+# example playbook that installs the dnf local plugin
+# and configures the plugin to use an nfs directory
+# for the local repository. The nfs attachment is also
+# created, The directory name is set in the inventory
+# file
+#
+
+- name: Configure DNF Local Plugin Play
+  hosts: pi02
+  become: true
+
+  roles:
+    # install nfs client and configures attach file share
+    - role: fedora_nfs_client
+      vars:
+        fnm_server: quga.lan
+        fnm_export: /volume1/nfs-dnf
+        fnm_mnt_path: "{{ dnf_repo }}"
+
+    # install the plugin and configure
+    - role: fedora_dnf_local_plugin
+      vars:
+        dlp_repodir: "{{ dnf_repo }}"
+...
