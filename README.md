@@ -18,4 +18,4 @@ A home or small office network that has multiple Fedora machines. These machines
 
 ## Technical Notes
 
-I use a Fedora Workstation based computer to create these examples. 
+I used a Fedora Workstation based computer to create these examples. 
