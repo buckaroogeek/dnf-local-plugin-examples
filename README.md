@@ -3,7 +3,7 @@ DNF Local Plugin Examples
 
 ## Description
 
-This repository contains example scripts described in the Fedora Magazine article covering the benefits of the DNF Local Plugin for users that have multiple computers running Fedora on their home or office network. The DNF Local Plugin enables these computers to share a local rpm repository that helps to reduce the amount of dnf related traffic across the internet.
+This repository contains example scripts described in the Fedora Magazine article(https://fedoramagazine.org/use-the-dnf-local-plugin-to-speed-up-your-home-lab/) covering the benefits of the DNF Local Plugin for users that have multiple computers running Fedora on their home or office network. The DNF Local Plugin enables these computers to share a local rpm repository that helps to reduce the amount of dnf related traffic across the internet.
 
 Examples for multiple physical machines, multiple virtual machines, and containers are given.
 
