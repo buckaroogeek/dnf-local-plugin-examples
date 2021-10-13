@@ -16,7 +16,7 @@ tmp_name=local.conf
 configuration_name=/etc/dnf/plugins/local.conf
 
 # location of repodir on container
-container_repodir=/srv/repodir
+container_repodir=/srv/repo/f34
 
 # create scratch plugin conf file for container
 # using repodir location as set in container_repodir

@@ -8,7 +8,7 @@
 #
 
 - name: Configure DNF Local Plugin Play
-  hosts: all
+  hosts: pi03
   become: true
 
   roles:

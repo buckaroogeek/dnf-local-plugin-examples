@@ -2,3 +2,5 @@ repodir
 .vagrant
 roles
 *.swp
+note*
+article*
